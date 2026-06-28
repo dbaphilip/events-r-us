@@ -1,3 +1,24 @@
-<h1>Events#index</h1>
-<%= 1+1 %>
-<p>Find me in app/views/events/index.html.erb</p>
+<div class="container brico fs-4 shadow-pri">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Event</th>
+        <th scope="col">Where</th>
+        <th scope="col">When</th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @events.each do |e| %>
+        <tr>
+          <th scope="row">1</th>
+          <td><%= truncate e.name, length: 21, separator: " " %></td>
+          <td><%= e.location %></td>
+          <td><%= e.starts_at.strftime("%H:%M on %B %d, %Y") %></td>
+          <td><%= truncate e.description, length: 35, separator: " " %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
