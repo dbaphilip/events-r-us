@@ -1,2 +1,32 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<div class="container brico">
+  <div class="row">
+    <h1 class="fw-bold display-3"><%= @event.name %></h1>
+    <div class="col-md-8">
+      <p class="fs-3"><%= @event.description %></p>
+    </div>
+    <div class="col-md-4">
+      <table class="table shadow-pri fs-3">
+        <tbody>
+          <tr>
+            <td>
+              <strong>Price: </strong>
+              <%= price @event %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Location: </strong>
+              <%= @event.location %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Time: </strong>
+              <%= day_and_time @event %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

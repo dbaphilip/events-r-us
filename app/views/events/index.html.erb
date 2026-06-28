@@ -13,9 +13,13 @@
       <% @events.each do |e| %>
         <tr>
           <th scope="row">1</th>
-          <td><%= truncate e.name, length: 21, separator: " " %></td>
+          <td>
+            <%= link_to e, class: "link-body-emphasis text-decoration-none" do %>
+              <%= truncate e.name, length: 21, separator: " " %>
+            <% end %>
+          </td>
           <td><%= e.location %></td>
-          <td><%= e.starts_at.strftime("%H:%M on %B %d, %Y") %></td>
+          <td><%= day_and_time e %></td>
           <td><%= truncate e.description, length: 35, separator: " " %></td>
         </tr>
       <% end %>
