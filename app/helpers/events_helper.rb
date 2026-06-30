@@ -8,6 +8,10 @@ module EventsHelper
         end
     end
 
+    def day(event)
+        event.starts_at.strftime("%b %d, %Y")
+    end
+
     def day_and_time(event)
         event.starts_at.strftime("%H:%M - %b %d, %Y")
     end

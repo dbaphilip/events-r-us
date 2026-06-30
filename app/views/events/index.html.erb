@@ -2,11 +2,20 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
+        <th scope="col">
+          <%= link_to new_event_path, class: "text-decoration-none" do %>
+            +
+          <% end %>
+        </th>
         <th scope="col">Event</th>
         <th scope="col">Where</th>
         <th scope="col">When</th>
-        <th scope="col">Description</th>
+        <th scope="col" class="d-flex justify-content-between">
+          <span>Description</span>
+          <%= link_to new_event_path, class: "space fw-bold btn btn-primary shadow-pri" do %>
+            NEW EVENT
+          <% end %>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -19,8 +28,10 @@
             <% end %>
           </td>
           <td><%= e.location %></td>
-          <td><%= day_and_time e %></td>
-          <td><%= truncate e.description, length: 35, separator: " " %></td>
+          <td><%= day e %></td>
+          <td>
+            <%= truncate e.description, length: 35, separator: " " %>
+          </td>
         </tr>
       <% end %>
     </tbody>
