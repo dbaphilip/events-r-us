@@ -1,0 +1,31 @@
+<div class="container brico">
+  <div class="row">
+    <h1 class="fw-bold display-3"> New event </h1>
+    <div class="col-12">
+      <%= form_with(model: @event) do |f| %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <%= f.text_field :name, placeholder: "Name", class: "form-control shadow-pri fs-3" %>
+            </div>
+            <div class="mb-3">
+              <%= f.text_area :description, placeholder: "Description", class: "form-control shadow-pri fs-3", rows: 5 %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <%= f.number_field :price, placeholder: "Price", class: "form-control shadow-pri fs-3" %>
+            </div>
+            <div class="mb-3">
+              <%= f.text_field :location, placeholder: "Location", class: "form-control shadow-pri fs-3" %>
+            </div>
+            <div class="mb-3">
+              <%= f.datetime_field :starts_at, class: "fancy-native-picker form-control shadow-pri fs-3" %>
+            </div>
+            <%= f.submit class: "btn btn-primary shadow-pri brico fw-bold fs-4" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
