@@ -1,12 +1,18 @@
-.shadow-pri {
-  box-shadow:
-    rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+.avatar {
+  border: 3px solid saddlebrown;
+  padding: .2rem;
+  border-radius: 100%;
 }
 
-.brown {
-  color: saddlebrown;
+.avatar.small {
+  width: 40px;
+  height: 40px;
+}
+
+.avatar.big {
+  width: 75px;
+  height: 75px;
+  border: 5px solid #0d6efd;
 }
 
 .fancy-native-picker {
@@ -22,4 +28,19 @@
 .fancy-native-picker:focus {
   border-color: #2563eb;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.blue {
+  color: #0d6efd;
+}
+
+.red {
+  color: maroon;
+}
+
+.shadow-pri {
+  box-shadow:
+    rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }

@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-center">
+  <ul class="text-start">
+    <% object.errors.full_messages.each do |msg| %>
+      <li class="red fw-bold englebert fs-3">
+        <%= msg %>
+      </li>
+      <% end %>
+  </ul>
+</div>

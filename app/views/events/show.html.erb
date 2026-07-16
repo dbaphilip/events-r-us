@@ -1,6 +1,8 @@
 <div class="container brico">
   <div class="row">
-    <h1 class="fw-bold display-3"><%= @event.name %></h1>
+    <h1 class="mb-4 fw-bold brico lh-1 display-3">
+      <%= @event.name %>
+    </h1>
     <div class="col-md-8">
       <p class="fs-3"><%= @event.description %></p>
     </div>
@@ -23,6 +25,12 @@
             <td>
               <strong>Time: </strong>
               <%= day_and_time @event %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Spots remaining: </strong>
+              <%= @event.capacity %>
             </td>
           </tr>
           <tr>

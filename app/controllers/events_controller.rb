@@ -12,8 +12,12 @@ class EventsController < ApplicationController
   end
 
   def create
-    e = Event.create(event_params)
-    redirect_to e
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to @event, notice: "Event created"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -21,9 +25,12 @@ class EventsController < ApplicationController
   end
 
   def update
-    e = Event.find(params[:id])
-    e.update(event_params) 
-    redirect_to e
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to @event, notice: "Event updated"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -35,6 +42,6 @@ class EventsController < ApplicationController
 private
 
   def event_params
-    params.require(:event).permit(:name, :description, :location, :starts_at, :price)
+    params.require(:event).permit(:name, :description, :location, :image, :capacity, :starts_at, :price)
   end
 end
